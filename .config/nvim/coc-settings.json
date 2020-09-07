@@ -1,0 +1,29 @@
+{
+	"clangd.arguments": ["--suggest-missing-includes", "--completion-style=detailed", 
+		"--fallback-style=google"],
+	"template.templatesDirectory": "~/.config/nvim/coc-templates",
+
+	"languageserver": {
+  	  "golang": {
+  	    "command": "gopls",
+  	    "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+  	    "filetypes": ["go"],
+  	    "initializationOptions": {
+  	      "usePlaceholders": true
+  	    }
+      },
+      "fortran": {
+  	    "command": "fortls",
+        "args" : [
+            "--symbol_skip_mem",
+            "--incrmental_sync",
+            "--autocomplete_no_prefix"
+        ],
+  	    "rootPatterns": [".fortls", ".git/"],
+  	    "filetypes": ["fortran"],
+  	    "initializationOptions": {
+  	      "usePlaceholders": true
+        }
+      }
+    }
+}
